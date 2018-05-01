@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85C74621-7405-40B8-B2FE-74EA3D23672E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnquiryRequest3</RootNamespace>
+    <AssemblyName>EnquiryRequest3</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/f733ce6b-50d0-427e-bc6d-987c1f09b0b2/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/EnquiryRequest3</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/f733ce6b-50d0-427e-bc6d-987c1f09b0b2/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/EnquiryRequest3</ApplicationInsightsAnnotationResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotSpatial.Data, Version=1.9.0.0, Culture=neutral, PublicKeyToken=c29dbf30e059ca9d, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotSpatial.Data.1.9\lib\net40-Client\DotSpatial.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Mono, Version=1.9.0.0, Culture=neutral, PublicKeyToken=425ba4de41127026, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotSpatial.Mono.1.9\lib\net40-Client\DotSpatial.Mono.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Projections, Version=1.9.0.0, Culture=neutral, PublicKeyToken=272632bddd08a38b, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotSpatial.Projections.1.9\lib\net40-Client\DotSpatial.Projections.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Serialization, Version=1.9.0.0, Culture=neutral, PublicKeyToken=441f200f827611e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotSpatial.Serialization.1.9\lib\net40-Client\DotSpatial.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="DotSpatial.Topology, Version=1.9.0.0, Culture=neutral, PublicKeyToken=a66b5e9434ca3671, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotSpatial.Topology.1.9\lib\net40-Client\DotSpatial.Topology.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpressiveAnnotations, Version=2.7.4.0, Culture=neutral, PublicKeyToken=d3e372f3c1e83cec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExpressiveAnnotations.2.9.6\lib\net45\ExpressiveAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpressiveAnnotations.MvcUnobtrusive, Version=2.5.4.0, Culture=neutral, PublicKeyToken=d3e372f3c1e83cec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExpressiveAnnotations.2.9.6\lib\net45\ExpressiveAnnotations.MvcUnobtrusive.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI, Version=1.7.4.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <HintPath>..\packages\GeoAPI.1.7.4\lib\net45\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoJSON.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GeoJSON.Net.1.1.64\lib\net45\GeoJSON.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.TraceListener, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.TraceListener.2.5.0\lib\net45\Microsoft.ApplicationInsights.TraceListener.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NetTopologySuite, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetTopologySuite.1.14\lib\net45\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO.GeoJSON, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetTopologySuite.IO.GeoJSON.1.14\lib\net45\NetTopologySuite.IO.GeoJSON.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerCollections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2573bf8a1bdddcd5, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetTopologySuite.1.14\lib\net45\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="Proj4Net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Proj4Net.1.0.0\lib\Proj4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BoundariesController.cs" />
+    <Compile Include="Controllers\EnquiriesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IdentityExtensions.cs" />
+    <Compile Include="Controllers\InvoiceRemindersController.cs" />
+    <Compile Include="Controllers\InvoiceReminderTypesController.cs" />
+    <Compile Include="Controllers\InvoicesController.cs" />
+    <Compile Include="Controllers\LrcInfoesController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrganisationsController.cs" />
+    <Compile Include="Controllers\QuotesController.cs" />
+    <Compile Include="Controllers\SearchTypesController.cs" />
+    <Compile Include="Controllers\Utilities\SpatialHelper.cs" />
+    <Compile Include="ErrorHandler\AiHandleErrorAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803081639040_initial.cs" />
+    <Compile Include="Migrations\201803081639040_initial.Designer.cs">
+      <DependentUpon>201803081639040_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803092246141_changes to references.cs" />
+    <Compile Include="Migrations\201803092246141_changes to references.Designer.cs">
+      <DependentUpon>201803092246141_changes to references.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803092253104_changes to references2.cs" />
+    <Compile Include="Migrations\201803092253104_changes to references2.Designer.cs">
+      <DependentUpon>201803092253104_changes to references2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803092320096_identity from string to int.cs" />
+    <Compile Include="Migrations\201803092320096_identity from string to int.Designer.cs">
+      <DependentUpon>201803092320096_identity from string to int.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803092327588_link reference user to contact.cs" />
+    <Compile Include="Migrations\201803092327588_link reference user to contact.Designer.cs">
+      <DependentUpon>201803092327588_link reference user to contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803100021243_contactviewmodel.cs" />
+    <Compile Include="Migrations\201803100021243_contactviewmodel.Designer.cs">
+      <DependentUpon>201803100021243_contactviewmodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803111004386_remove validation on contact.cs" />
+    <Compile Include="Migrations\201803111004386_remove validation on contact.Designer.cs">
+      <DependentUpon>201803111004386_remove validation on contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803111016295_contact fluent api.cs" />
+    <Compile Include="Migrations\201803111016295_contact fluent api.Designer.cs">
+      <DependentUpon>201803111016295_contact fluent api.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803111036117_moving validation to meta data.cs" />
+    <Compile Include="Migrations\201803111036117_moving validation to meta data.Designer.cs">
+      <DependentUpon>201803111036117_moving validation to meta data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803111137452_moving contact to appuser.cs" />
+    <Compile Include="Migrations\201803111137452_moving contact to appuser.Designer.cs">
+      <DependentUpon>201803111137452_moving contact to appuser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803111525120_updating email.cs" />
+    <Compile Include="Migrations\201803111525120_updating email.Designer.cs">
+      <DependentUpon>201803111525120_updating email.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803131128115_deleted contact.cs" />
+    <Compile Include="Migrations\201803131128115_deleted contact.Designer.cs">
+      <DependentUpon>201803131128115_deleted contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803132233307_change enquiry code.cs" />
+    <Compile Include="Migrations\201803132233307_change enquiry code.Designer.cs">
+      <DependentUpon>201803132233307_change enquiry code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803132303066_auto timestamp enquirydate at db level.cs" />
+    <Compile Include="Migrations\201803132303066_auto timestamp enquirydate at db level.Designer.cs">
+      <DependentUpon>201803132303066_auto timestamp enquirydate at db level.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804271508072_boundaryextras.cs" />
+    <Compile Include="Migrations\201804271508072_boundaryextras.Designer.cs">
+      <DependentUpon>201804271508072_boundaryextras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Boundary.cs" />
+    <Compile Include="Models\Enquiry.cs" />
+    <Compile Include="Models\EnquiryViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\InvoiceReminder.cs" />
+    <Compile Include="Models\InvoiceReminderType.cs" />
+    <Compile Include="Models\LrcInfo.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MetaData.cs" />
+    <Compile Include="Models\Organisation.cs" />
+    <Compile Include="Models\PaymentMethod.cs" />
+    <Compile Include="Models\Quote.cs" />
+    <Compile Include="Models\SearchType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\blue_MarkerZ.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\brown_MarkerZ.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\darkgreen_MarkerZ.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\green_MarkerZ.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\orange_MarkerZ.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\paleblue_MarkerZ.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\pink_MarkerZ.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\purple_MarkerZ.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\red_MarkerZ.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerA.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerB.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerC.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerD.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerE.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerF.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerG.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerH.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerI.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerJ.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerK.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerL.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerM.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerN.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerO.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerP.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerQ.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerR.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerS.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerT.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerU.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerV.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerW.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerX.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerY.png" />
+    <Content Include="Images\CustomMapMarkers\yellow_MarkerZ.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
+    <Content Include="Images\CustomMapMarkers\markers.psd" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\EnquiryRequest2.js" />
+    <Content Include="Scripts\EnquiryRequest.js" />
+    <Content Include="Scripts\expressive.annotations.validate.js" />
+    <Content Include="Scripts\expressive.annotations.validate.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jsts.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\ol-debug.js" />
+    <Content Include="Scripts\ol.css" />
+    <Content Include="Scripts\ol.js" />
+    <Content Include="Scripts\proj4.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\Boundaries\Create.cshtml" />
+    <Content Include="Views\Boundaries\Delete.cshtml" />
+    <Content Include="Views\Boundaries\Details.cshtml" />
+    <Content Include="Views\Boundaries\Edit.cshtml" />
+    <Content Include="Views\Boundaries\Index.cshtml" />
+    <Content Include="Views\Enquiries\Create.cshtml" />
+    <Content Include="Views\Enquiries\Delete.cshtml" />
+    <Content Include="Views\Enquiries\Details.cshtml" />
+    <Content Include="Views\Enquiries\Edit.cshtml" />
+    <Content Include="Views\Enquiries\Index.cshtml" />
+    <Content Include="Views\Invoices\Create.cshtml" />
+    <Content Include="Views\Invoices\Delete.cshtml" />
+    <Content Include="Views\Invoices\Details.cshtml" />
+    <Content Include="Views\Invoices\Edit.cshtml" />
+    <Content Include="Views\Invoices\Index.cshtml" />
+    <Content Include="Views\InvoiceReminders\Create.cshtml" />
+    <Content Include="Views\InvoiceReminders\Delete.cshtml" />
+    <Content Include="Views\InvoiceReminders\Details.cshtml" />
+    <Content Include="Views\InvoiceReminders\Edit.cshtml" />
+    <Content Include="Views\InvoiceReminders\Index.cshtml" />
+    <Content Include="Views\InvoiceReminderTypes\Create.cshtml" />
+    <Content Include="Views\InvoiceReminderTypes\Delete.cshtml" />
+    <Content Include="Views\InvoiceReminderTypes\Details.cshtml" />
+    <Content Include="Views\InvoiceReminderTypes\Edit.cshtml" />
+    <Content Include="Views\InvoiceReminderTypes\Index.cshtml" />
+    <Content Include="Views\LrcInfoes\Create.cshtml" />
+    <Content Include="Views\LrcInfoes\Delete.cshtml" />
+    <Content Include="Views\LrcInfoes\Details.cshtml" />
+    <Content Include="Views\LrcInfoes\Edit.cshtml" />
+    <Content Include="Views\LrcInfoes\Index.cshtml" />
+    <Content Include="Views\Organisations\Create.cshtml" />
+    <Content Include="Views\Organisations\Delete.cshtml" />
+    <Content Include="Views\Organisations\Details.cshtml" />
+    <Content Include="Views\Organisations\Edit.cshtml" />
+    <Content Include="Views\Organisations\Index.cshtml" />
+    <Content Include="Views\Quotes\Create.cshtml" />
+    <Content Include="Views\Quotes\Delete.cshtml" />
+    <Content Include="Views\Quotes\Details.cshtml" />
+    <Content Include="Views\Quotes\Edit.cshtml" />
+    <Content Include="Views\Quotes\Index.cshtml" />
+    <Content Include="Views\SearchTypes\Create.cshtml" />
+    <Content Include="Views\SearchTypes\Delete.cshtml" />
+    <Content Include="Views\SearchTypes\Details.cshtml" />
+    <Content Include="Views\SearchTypes\Edit.cshtml" />
+    <Content Include="Views\SearchTypes\Index.cshtml" />
+    <Content Include="Views\Manage\EditContactInfo.cshtml" />
+    <Content Include="Views\Account\ChangeEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803081639040_initial.resx">
+      <DependentUpon>201803081639040_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803092246141_changes to references.resx">
+      <DependentUpon>201803092246141_changes to references.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803092253104_changes to references2.resx">
+      <DependentUpon>201803092253104_changes to references2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803092320096_identity from string to int.resx">
+      <DependentUpon>201803092320096_identity from string to int.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803092327588_link reference user to contact.resx">
+      <DependentUpon>201803092327588_link reference user to contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803100021243_contactviewmodel.resx">
+      <DependentUpon>201803100021243_contactviewmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803111004386_remove validation on contact.resx">
+      <DependentUpon>201803111004386_remove validation on contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803111016295_contact fluent api.resx">
+      <DependentUpon>201803111016295_contact fluent api.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803111036117_moving validation to meta data.resx">
+      <DependentUpon>201803111036117_moving validation to meta data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803111137452_moving contact to appuser.resx">
+      <DependentUpon>201803111137452_moving contact to appuser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803111525120_updating email.resx">
+      <DependentUpon>201803111525120_updating email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803131128115_deleted contact.resx">
+      <DependentUpon>201803131128115_deleted contact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803132233307_change enquiry code.resx">
+      <DependentUpon>201803132233307_change enquiry code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803132303066_auto timestamp enquirydate at db level.resx">
+      <DependentUpon>201803132303066_auto timestamp enquirydate at db level.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804271508072_boundaryextras.resx">
+      <DependentUpon>201804271508072_boundaryextras.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>27105</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:27105/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
